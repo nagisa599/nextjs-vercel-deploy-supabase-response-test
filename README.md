@@ -9,4 +9,15 @@
 [本番環境]
 
 ## パターン３　 Nextjs(Vercel)　 ✖️ RDS(AWS)
+
 # nextjs-vercel-deploy-supabase-response-test
+
+## supabase コンテナの立ち上げ方
+
+```bash
+# supabase起動
+supabase start
+
+# supabase停止
+supabase stop
+```
