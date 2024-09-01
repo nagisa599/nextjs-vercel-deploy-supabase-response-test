@@ -7,5 +7,11 @@ const connectionString = process.env.POSTGRES_URL;
 if (!connectionString) {
   throw new Error('AUTH_DRIZZLE_URL is not set');
 }
-const pool = postgres(connectionString, { max: 1 });
+
+// SSLの検証を無効にするための設定を追加
+const pool = postgres(connectionString, { 
+  max: 1,
+  ssl: { rejectUnauthorized: false } // ここでSSL検証を無効にする
+});
+
 export const db = drizzle(pool, { schema });
