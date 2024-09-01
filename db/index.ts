@@ -11,7 +11,7 @@ if (!connectionString) {
 // SSLの検証を無効にするための設定を追加
 const pool = postgres(connectionString, { 
   max: 1,
-  ssl: { rejectUnauthorized: true } // ここでSSL検証を無効にする
+  ssl: { rejectUnauthorized: false } // ここでSSL検証を無効にする
 });
 
 export const db = drizzle(pool, { schema });
