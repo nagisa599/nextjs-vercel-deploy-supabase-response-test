@@ -1,6 +1,13 @@
 # Nextjs(Vercel) 　 ✖️ DB(Supabase) 　における応答速度調査
 
-## supabase コンテナの立ち上げ方(ローカル環境)
+このリポジトリは、Nextjs(vercel)と DB(supabse)を利用した場合の応答速度を調べるためのリポジトリーです
+
+## ローカル環境構築
+
+> [!CAUTION]
+> Supabase ClI と docker がインストールされていること
+
+### supabase を起動
 
 ```bash
 # supabase起動
@@ -10,4 +17,23 @@ supabase start
 supabase stop
 ```
 
-## vercel の build の注意
+## DB Migration
+
+```bash
+# migration
+pnpm run drizzle:migrate#
+```
+
+## Nextjs の立ち上げ方
+
+```bash
+pnpm run dev
+```
+
+## Vercel のデプロイする時のコードベースで変更すること
+
+package.json の build をいかに変更
+
+```json
+ "build": "drizzle-kit generate && drizzle-kit migrate &&  next build",
+```
