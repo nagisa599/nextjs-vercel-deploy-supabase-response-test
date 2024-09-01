@@ -30,10 +30,12 @@ pnpm run drizzle:migrate#
 pnpm run dev
 ```
 
-## Vercel のデプロイする時のコードベースで変更すること
+## Vercel のデプロイする時に注意すること
 
 package.json の build をいかに変更
 
 ```json
  "build": "drizzle-kit generate && drizzle-kit migrate &&  next build",
 ```
+
+vercel の環境変数に NODE_TLS_REJECT_UNAUTHORIZED=0 を追加
